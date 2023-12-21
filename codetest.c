@@ -182,7 +182,9 @@ void pousser_bloc() {//programme pour pousser les blocs
     }
 }
 
+void blocs_cassable(){
 
+}
 
 int tempsTotal = 120;
 int tempsRestant;
@@ -340,10 +342,11 @@ void case1(){
             }
         }
         printf("Temps restant : %d secondes\n", tempsRestant);
-        scoreNiveau = tempsRestant * 100;
+        if (tempsRestant > 0);
+            scoreNiveau = tempsRestant * 100;
         // pause pour ralentir ou accelerer le mouvement entre chaque position de la balle
         usleep(100000); // pause de 0,1 seconde
-    } while (x_personnage != x_boule || y_personnage != y_boule && tempsRestant > 0);
+    } while (x_personnage != x_boule || y_personnage != y_boule && tempsRestant > 0 || y_personnage == y_piege && x_personnage == y_piege);
 // continuer le jeu jusqu'a ce que le personnage rencontre la balle ou que le temps soit ecoule
     printf("GAME OVER");
     printf("score du niveau : %d",scoreNiveau);
