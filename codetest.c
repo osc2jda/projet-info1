@@ -12,7 +12,7 @@ void effacerEcran() {
 }
 
 int code_secret;// code secret cache dans le nom
-
+int scoreNiveau = 0;
 // délimitation du tableau
 int xmin = 1; // minnimum du nombre de colonnes de la map
 int ymin = 1;// minnimum de nombre de lignes de la map
@@ -185,7 +185,7 @@ void pousser_bloc() {//programme pour pousser les blocs
 
 
 int tempsTotal = 120;
-int tempsRestant ;
+int tempsRestant;
 clock_t debut = 0; // initialisez debut
 clock_t tempsAvantLaPause;
 
@@ -340,11 +340,13 @@ void case1(){
             }
         }
         printf("Temps restant : %d secondes\n", tempsRestant);
+        scoreNiveau = tempsRestant * 100;
         // pause pour ralentir ou accelerer le mouvement entre chaque position de la balle
         usleep(100000); // pause de 0,1 seconde
     } while (x_personnage != x_boule || y_personnage != y_boule && tempsRestant > 0);
 // continuer le jeu jusqu'a ce que le personnage rencontre la balle ou que le temps soit ecoule
     printf("GAME OVER");
+    printf("score du niveau : %d",scoreNiveau);
     sleep(2000);// afficher game over pendant 2 secondes
 }
 
