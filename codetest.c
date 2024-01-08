@@ -346,7 +346,7 @@ void case1(){
             scoreNiveau = tempsRestant * 100;
         // pause pour ralentir ou accelerer le mouvement entre chaque position de la balle
         usleep(100000); // pause de 0,1 seconde
-    } while (x_personnage != x_boule || y_personnage != y_boule && tempsRestant > 0 || y_personnage == y_piege && x_personnage == y_piege);
+    } while (x_personnage != x_boule || y_personnage != y_boule && tempsRestant > 0);
 // continuer le jeu jusqu'a ce que le personnage rencontre la balle ou que le temps soit ecoule
     printf("GAME OVER");
     printf("score du niveau : %d",scoreNiveau);
