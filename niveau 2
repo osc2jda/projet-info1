@@ -344,8 +344,8 @@ void case1(){
             }
         }
         printf("Temps restant : %d secondes\n", tempsRestant);
-        if (tempsRestant >= 0);
-            scoreNiveau = tempsRestant * 100;
+        if (tempsRestant >= 0){
+            scoreNiveau = tempsRestant * 100; }
         // pause pour ralentir ou accelerer le mouvement entre chaque position de la balle
         usleep(100000); // pause de 0,1 seconde
     } while (x_personnage != x_boule || y_personnage != y_boule && tempsRestant > 0 || y_personnage == y_piege && x_personnage == y_piege);
